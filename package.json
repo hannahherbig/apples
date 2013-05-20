@@ -1,0 +1,11 @@
+{ "name": "apples"
+, "version": "0.0.0"
+, "private": true
+, "dependencies":
+  { "socket.io": "*"
+  , "connect": "*"
+  , "lodash": "*"
+  , "render": "*"
+  , "debug": "*"
+  }
+}
