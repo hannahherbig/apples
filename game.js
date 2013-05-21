@@ -118,7 +118,7 @@ Game.prototype.play = function () {
   
   var cards = _(this.players).reject('judge').pluck('played').shuffle().valueOf()
   
-  if (this.state === PLAYING && _.all(cards)) {
+  if (_.all(cards)) {
     this.state = JUDGING
     this.emit('judge', cards)
     this.emit('update')
