@@ -1,9 +1,8 @@
 !function (angular, io, app) {
   'use strict';
   
-  factory.$inject = ['$rootScope']
-  
-  function factory($rootScope) {
+  app.factory('socket', ['$rootScope',
+  function ($rootScope) {
     var socket = io.connect()
   
     return {
@@ -35,7 +34,5 @@
         }
       }
     }
-  }
-  
-  app.factory('socket', factory)
+  }])
 }(window.angular, window.io, window.app)

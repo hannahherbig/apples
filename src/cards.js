@@ -1,4 +1,6 @@
 !function (app) {
+  'use strict';
+  
   app.constant('CARDS', {
     "A Bad Haircut": "The perfect start to a bad hair day.",
     "A Bull Fight": "Also known as \"la fiesta brava\" (the brave festival).  A whole lot of bull..",
@@ -996,5 +998,5 @@
     "Woebegone": "dismal, sorrowful, bummed out",
     "Worldly": "experienced, sophisticated, materialistic",
     "Zany": "crazy, funny, wacky"
-  });
-}(window.app);
+  })
+}(window.app)

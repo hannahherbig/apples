@@ -1,7 +1,10 @@
 'use strict';
 
 var connect = require('connect')
-  , app     = connect().use(connect.static('public'))
+  , app     = connect()
+              .use(connect.logger('dev'))
+              .use(connect.compress())
+              .use(connect.static('public'))
   , server  = require('http').createServer(app)
   , io      = require('socket.io').listen(server)
   , Game    = require('./game')

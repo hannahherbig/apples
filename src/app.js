@@ -3,16 +3,14 @@
 
   var app = window.app = angular.module('app', [])
   
-  app.controller('controller', controller)
-  controller.$inject = ['$scope', 'socket', 'CARDS']
-  
-  function controller($scope, socket, CARDS) {
+  app.controller('controller', ['$scope', 'socket', 'CARDS',
+  function ($scope, socket, CARDS) {
     var UNKNOWN = 'Unknown'
       , WAITING = 'Waiting'
       , PLAYING = 'Playing'
       , JUDGING = 'Judging'
       , connected = false
-
+    
     $scope.state = UNKNOWN
 
     // refresh the page if we connect while we're already connected
@@ -60,5 +58,5 @@
     $scope.updateName = function () {
       socket.emit('name', $scope.name)
     }
-  }
+  }])
 }(window, window.angular, window._)
