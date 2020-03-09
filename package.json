@@ -15,7 +15,7 @@
   { "debug": "^0.8.1"
   , "lodash": "^4.17.15"
   , "connect": "^2.17.1"
-  , "socket.io": "^0.9.16"
+  , "socket.io": "^2.3.0"
   }
 , "devDependencies":
   { "grunt-contrib-concat": "^0.4.0"
