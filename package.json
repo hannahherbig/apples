@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^5.0.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
