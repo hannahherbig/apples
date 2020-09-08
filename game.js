@@ -116,13 +116,9 @@ Game.prototype.draw = function () {
 Game.prototype.play = function () {
   debug("Game#play");
 
-  var cards = _(this.players)
-    .reject("judge")
-    .pluck("played")
-    .shuffle()
-    .valueOf();
+  var cards = _(this.players).reject("judge").map("played").shuffle().valueOf();
 
-  if (_.all(cards)) {
+  if (_.every(cards)) {
     this.state = JUDGING;
     this.emit("judge", cards);
     this.emit("update");

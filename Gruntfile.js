@@ -11,23 +11,11 @@ module.exports = function (grunt) {
       },
     },
     uglify: { dist: { files: { "dist/app.min.js": ["dist/app.js"] } } },
-    jshint: {
-      options: { jshintrc: ".jshintrc" },
-      all: [
-        "Gruntfile.js",
-        "app.js",
-        "game.js",
-        "src/app.js",
-        "src/socket.js",
-        "src/cards.js",
-      ],
-    },
   });
 
   grunt.registerTask("dist", ["concat:dist", "uglify:dist"]);
-  grunt.registerTask("default", ["jshint", "concat", "uglify"]);
+  grunt.registerTask("default", ["concat", "uglify"]);
 
   grunt.loadNpmTasks("grunt-contrib-concat");
   grunt.loadNpmTasks("grunt-contrib-uglify");
-  grunt.loadNpmTasks("grunt-contrib-jshint");
 };
