@@ -1,26 +1,45 @@
-{ "name": "apples"
-, "version": "0.0.1"
-, "author":
-  { "name": "Andrew Herbig"
-  , "email": "notandrewherbig@gmail.com"
-  }
-, "description": "Apples to Apples game using socket.io and angular.js"
-, "repository":
-  { "type": "git"
-  , "url": "https://github.com/andrew12/apples.git"
-  }
-, "license": "ISC"
-, "private": true
-, "dependencies":
-  { "debug": "^4.1.1"
-  , "lodash": "^4.17.15"
-  , "connect": "^3.7.0"
-  , "socket.io": "^2.3.0"
-  }
-, "devDependencies":
-  { "grunt-contrib-concat": "^0.4.0"
-  , "grunt-contrib-jshint": "^2.0.0"
-  , "grunt-contrib-uglify": "^5.0.0"
-  , "grunt": "^0.4.5"
+{
+  "name": "apples",
+  "version": "0.0.1",
+  "author": {
+    "name": "Andrew Herbig",
+    "email": "notandrewherbig@gmail.com"
+  },
+  "description": "Apples to Apples game using socket.io and angular.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrew12/apples.git"
+  },
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "debug": "^4.1.1",
+    "lodash": "^4.17.15",
+    "connect": "^3.7.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
+    "posttest": "npm run format"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
