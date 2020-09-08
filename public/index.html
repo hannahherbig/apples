@@ -2,10 +2,13 @@
 <html ng-app="app">
   <head>
     <title>Apples to Apples</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.css">
-    <link rel="stylesheet" href="app.css">
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="app.css" />
   </head>
-  
+
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -14,7 +17,7 @@
         </div>
       </div>
     </div>
-    
+
     <div ng-controller="controller" class="container-fluid">
       <div class="span6">
         <div ng-hide="waiting" class="row-fluid">
@@ -22,7 +25,7 @@
             <strong>{{adjective}}</strong> - {{define(adjective)}}
           </div>
         </div>
-        
+
         <div ng-show="judging" class="row-fluid">
           <h4>Cards to judge</h4>
           <dl>
@@ -31,17 +34,15 @@
                 <span ng-switch-when="true">
                   <a href="#" ng-click="pick(card)">{{card}}</a>
                 </span>
-                
-                <span ng-switch-when="false">
-                  {{card}}
-                </span>
+
+                <span ng-switch-when="false"> {{card}} </span>
               </dt>
-              
+
               <dd>{{define(card)}}</dd>
             </div>
           </dl>
         </div>
-        
+
         <div class="row-fluid">
           <h4>Your hand</h4>
           <dl>
@@ -50,38 +51,47 @@
                 <span ng-switch-when="true">
                   <a href="#" ng-click="play(card)">{{card}}</a>
                 </span>
-                
-                <span ng-switch-when="false">
-                  {{card}}
-                </span>
+
+                <span ng-switch-when="false"> {{card}} </span>
               </dt>
-              
+
               <dd>{{define(card)}}</dd>
             </div>
           </dl>
         </div>
       </div>
-      
+
       <div class="span6">
         <div class="row-fluid">
           <ul>
             <li><strong>State:</strong> {{state}}</li>
             <li ng-show="last">
               <strong>Last game:</strong>
-              <ul> 
+              <ul>
                 <li><strong>Judge:</strong> {{last.judge.name}}</li>
-                <li><strong>Adjective:</strong> {{last.adjective}} &mdash; {{define(last.adjective)}}</li>
+                <li>
+                  <strong>Adjective:</strong> {{last.adjective}} &mdash;
+                  {{define(last.adjective)}}
+                </li>
                 <li><strong>Winner:</strong> {{last.winner.name}}</li>
-                <li><strong>Noun:</strong> {{last.noun}} &mdash; {{define(last.noun)}}</li>
+                <li>
+                  <strong>Noun:</strong> {{last.noun}} &mdash;
+                  {{define(last.noun)}}
+                </li>
               </ul>
             </li>
           </ul>
         </div>
-        
+
         <div class="row-fluid">
-          <input type="text" ng-model="name" ng-change="updateName()" placeholder="Name">
+          <input
+            type="text"
+            ng-model="name"
+            ng-change="updateName()"
+            placeholder="Name"
+          />
         </div>
-        
+
         <div class="row-fluid">
           <table class="table table-bordered">
             <thead>
@@ -90,18 +100,24 @@
                 <th>Score</th>
               </tr>
             </thead>
-            
+
             <tbody>
               <tr ng-repeat="player in players">
                 <td>
                   {{player.name}}
                   <span class="pull-right">
-                    <span ng-show="player.me" class="label label-inverse">You</span>
-                    <span ng-show="player.judge" class="label label-info">Judge</span>
-                    <span ng-show="player.played" class="label label-success">Played</span>
+                    <span ng-show="player.me" class="label label-inverse"
+                      >You</span
+                    >
+                    <span ng-show="player.judge" class="label label-info"
+                      >Judge</span
+                    >
+                    <span ng-show="player.played" class="label label-success"
+                      >Played</span
+                    >
                   </span>
                 </td>
-                
+
                 <td>{{player.score}}</td>
               </tr>
             </tbody>
@@ -109,7 +125,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Load the scripts last so the page loads faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
