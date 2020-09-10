@@ -7,4 +7,4 @@ jobs:
   auto-merge:
     runs-on: ubuntu-latest
     steps:
-      - uses: ahmadnassri/action-dependabot-auto-merge@v1
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2.0.1
