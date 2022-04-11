@@ -22,7 +22,7 @@
     "socket.io": "^4.4.1"
   },
   "devDependencies": {
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^5.1.0",
     "husky": "^7.0.4",
