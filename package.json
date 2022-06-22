@@ -24,7 +24,7 @@
   "devDependencies": {
     "grunt": "^1.5.3",
     "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-uglify": "^5.2.1",
+    "grunt-contrib-uglify": "^5.2.2",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.3",
     "prettier": "^2.7.1"
