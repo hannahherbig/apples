@@ -27,7 +27,7 @@
     "grunt-contrib-uglify": "^5.2.2",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.3",
-    "prettier": "^2.8.6"
+    "prettier": "^2.8.7"
   },
   "engines": {
     "node": ">=10"
